@@ -49,7 +49,6 @@ This can be mitigated by
 
 ## Linux Brigde
 
-### `brctl` ###
 ephemeral commands
 
     - `brctl addbr <bridge name>` (to add a bridge)
@@ -99,4 +98,3 @@ verify is openvswitch is installed
 - systemctl status openvswitch
 - systemctl start openvswitch
 - systemctl enable openvswitch
-
