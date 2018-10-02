@@ -9,6 +9,6 @@ Launch an instance
     `openstack server create --image <image name> --flavor <flavor name> `
 
 Find the console URL
-    `TODO  `
+    - `openstack console url show`
 
 
