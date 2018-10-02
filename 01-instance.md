@@ -1,3 +1,7 @@
+### Instances
+
+- location `/var/lib/nova/instances`
+
 Delete an instance:
     `openstack server delete <instance name>`
 
