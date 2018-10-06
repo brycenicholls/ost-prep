@@ -98,3 +98,32 @@ verify is openvswitch is installed
 - systemctl status openvswitch
 - systemctl start openvswitch
 - systemctl enable openvswitch
+
+
+### OVS logical flow / components
+#### br-int    
+
+- the integration bridge
+    - VLAN tagging for VM traffic
+  
+#### br-ex
+
+- creates an external bridge and connects to the gateway (QG) of the project router (qrouter) via the TAP interface
+    - br-ex -> tap -> qg -> qrouter
+
+#### qg
+- connects the router to the gateway
+
+#### qr 
+- connects the router to the integration brigde (br-int)
+#### qvo 
+- connects to the integration bridge
+
+#### qvb
+- connects the firewall bridge to br-int via qvo
+
+#### qbr
+- linux bridgethat provides the security groups
+
+
+eth1 -> br-ex -> br-int -> 
