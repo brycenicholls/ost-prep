@@ -22,5 +22,17 @@ curl -H "X-Auth-Token:<token_id>" <keystone_catalog_public_url>/tenants | jq .
 mysql -u root
 use keystone
 SELECT table_name, (data_length+index_length) tablesize FROM information_schema.tables;
-SELECT COUNT(*) FROM token WHERE token.expires < CONVERT_TZ(NOW)_, @@session.time_zone, '+00.00');
+SELECT COUNT(*) FROM token WHERE token.expires < CONVERT_TZ(NOW(), @@session.time_zone, '+00.00');
+TRUNKATE TABLE token;
+SELECT COUNT(*) FROM token WHERE token.expires < CONVERT_TZ(NOW(), @@session.ime_zone, '+00.00');
+exit
+```
+_check cron job exists_
+```
+crontab -u keystone -l
+```
+
+_modify crontab to run keystone flush hourly_
+```
+crontab -u keystone -e
 ```
